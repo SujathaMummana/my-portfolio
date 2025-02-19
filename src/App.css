@@ -1,38 +1,115 @@
-.App {
+body {
+  background-color: #e3f2fd; /* Light blue background */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  color: #0d47a1; /* Dark blue for headings */
+  font-size: 2rem; /* Large font size */
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p {
+  color: #1e3a8a; /* Medium-dark blue text */
+  font-size: 1.2rem; /* Slightly bigger text */
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav {
+  background-color: #1565c0; /* Bright blue navbar */
+  padding: 15px;
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+nav a {
   color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin: 0 15px;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+nav a:hover {
+  text-decoration: underline;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home, .about, .projects, .contact, .education, .skills {
+  background-color: #bbdefb; /* Light blue background */
+  padding: 50px;
+  text-align: center;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-pic {
+  width: 150px; /* Adjust width */
+  height: 150px; /* Adjust height */
+  border-radius: 50%; /* Make it circular */
+  display: block;
+  margin: 20px auto; /* Center the image */
+  object-fit: cover; /* Ensure the image is cropped properly */
+}
+
+button {
+  background-color: #0d47a1; /* Dark blue button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #1565c0; /* Lighter blue on hover */
+}
+
+/* Education Section */
+.education {
+  background-color: #90caf9; /* Slightly darker blue */
+}
+
+.education h2 {
+  color: #0d47a1; /* Dark blue heading */
+}
+
+.education ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.education li {
+  font-size: 1.2rem;
+  color: #1e3a8a; /* Medium blue */
+  margin: 10px 0;
+}
+
+/* Skills Section */
+.skills {
+  background-color: #64b5f6; /* Medium blue */
+}
+
+.skills h2 {
+  color: #0d47a1;
+}
+
+.skills ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skills li {
+  background-color: #42a5f5;
+  color: white;
+  font-size: 1.2rem;
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: inline-block;
 }
