@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react"; 
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./App.css";
@@ -17,67 +18,103 @@ const Navbar = () => (
     <Link to="/contact">Contact</Link>
   </nav>
 );
-
 const Home = () => (
   <section className="home">
-    <h1 data-aos="fade-up">Hi, I'm Sujatha Mummana</h1>
+    <h1 data-aos="fade-up">
+      <span className="animated-text">Hi, I'm</span> 
+      <span className="color-changing-name"> Sujatha Mummana</span>
+    </h1>
     <p data-aos="fade-right">Java Developer</p>
-    <p data-aos="fade-left">I'm a passionate frontend developer with experience in JavaScript, React.js, and Web development. I enjoy building interactive applications with functionality. My expertise includes modern UI/UX design, responsive web development, and performance optimization.</p>
+    <p data-aos="fade-left">
+   I am a passionate frontend developer with experience in JavaScript, React.js, and web development. I enjoy building interactive and user-friendly websites, combining creativity with functionality. My expertise includes modern UI/UX design, responsive web development, and performance optimization.</p>
   </section>
 );
+
+
+
 
 const About = () => (
   <section className="about" data-aos="zoom-in">
     <SectionHeader title="About Me" />
     <img src={profilePic} alt="Sujatha Mummana" className="profile-pic" />
-    <p>I am a dedicated frontend developer with experience in JavaScript, React.js, and Web development. I love creating interactive applications with functionality.</p>
+    <p>I am a passionate frontend developer with experience in JavaScript, React.js, and web development. I enjoy building interactive and user-friendly websites, combining creativity with functionality. My expertise includes modern UI/UX design, responsive web development, and performance optimization.</p>
   </section>
 );
 
 const Education = () => (
-  <section className="education" data-aos="fade-up">
-    <SectionHeader title="Education" />
-    <ul>
-      <li><strong>Bachelor of Technology</strong> - Bapatla Women’s Engineering College (2022 - 2025) - 7.5 CGPA</li>
-      <li><strong>Polytechnic</strong> - Welfare Institute of Science Technology and Management (2019 - 2022) - 74.8%</li>
-      <li><strong>SSC</strong> - Government High School (2018 - 2019) - 8.5%</li>
-    </ul>
-  </section>
+    <section className="education" data-aos="fade-up">
+      <SectionHeader title="Education" />
+      <div className="education-container">
+        <div className="education-card">
+          <h3>Bachelor of Technology</h3>
+          <p><strong>College:</strong> Bapatla Women’s Engineering College</p>
+          <p><strong>Year:</strong> 2022 - 2025</p>
+          <p><strong>CGPA:</strong> 7.5</p>
+        </div>
+        <div className="education-card">
+          <h3>Polytechnic</h3>
+          <p><strong>College:</strong> Welfare Institute of Science Technology and Management</p>
+          <p><strong>Year:</strong> 2019 - 2022</p>
+          <p><strong>Percentage:</strong> 74.8%</p>
+        </div>
+        <div className="education-card">
+          <h3>SSC</h3>
+          <p><strong>School:</strong> Government High School</p>
+          <p><strong>Year:</strong> 2018 - 2019</p>
+          <p><strong>Percentage:</strong> 8.5%</p>
+        </div>
+      </div>
+    </section>
+  
 );
+
+const skillsData = [
+  { name: "Java", level: 70 },
+  { name: "C", level: 60 },
+  { name: "Python", level: 60 },
+  { name: "React.js", level: 50 },
+  { name: "HTML", level: 50 },
+  { name: "CSS", level: 50 },
+  { name: "DSA", level: 60 }
+];
 
 const Skills = () => (
   <section className="skills" data-aos="fade-right">
     <SectionHeader title="Technical Skills" />
-    <div className="skill-bar">
-      <p>Java <span>70%</span></p>
-      <div className="bar"><div className="fill" style={{ width: "70%" }}></div></div>
-      <p>C <span>60%</span></p>
-      <div className="bar"><div className="fill" style={{ width: "60%" }}></div></div>
-      <p>Python <span>60%</span></p>
-      <div className="bar"><div className="fill" style={{ width: "60%" }}></div></div>
-      <p>HTML <span>50%</span></p>
-      <div className="bar"><div className="fill" style={{ width: "50%" }}></div></div>
-      <p>CSS <span>50%</span></p>
-      <div className="bar"><div className="fill" style={{ width: "50%" }}></div></div>
-      <p>DSA <span>60%</span></p>
-      <div className="bar"><div className="fill" style={{ width: "60%" }}></div></div>
-      <p>React.js <span>50%</span></p>
-      <div className="bar"><div className="fill" style={{ width: "50%" }}></div></div>
+    <ResponsiveContainer width="100%" height={300}>
+      <BarChart data={skillsData} layout="vertical" margin={{ top: 10, right: 30, left: 50, bottom: 10 }}>
+        <XAxis type="number" domain={[0, 100]} hide />
+        <YAxis dataKey="name" type="category" width={80} />
+        <Tooltip />
+        <Bar dataKey="level" fill="#8884d8" barSize={20} />
+      </BarChart>
+    </ResponsiveContainer>
+  </section>
+);
+const Projects = () => (
+  <section className="projects" data-aos="fade-left">
+    <SectionHeader title="Projects" />
+    <div className="projects-container">
+      <div className="project-card">
+        <h3 className="pdf-chat">Chat with PDFs</h3>
+        <p>An AI-powered tool that allows users to interact with PDFs using natural language queries.</p>
+      </div>
+      <div className="project-card">
+        <h3 className="web-chat">Chat with Website</h3>
+        <p>A web scraping chatbot that fetches information from websites and provides real-time responses.</p>
+      </div>
+      <div className="project-card">
+        <h3 className="sheets-integration">Google Sheets Integration</h3>
+        <p>Automates data management in Google Sheets using JavaScript, making workflow more efficient.</p>
+      </div>
+      <div className="project-card">
+        <h3 className="cinema-api">Cinema Connect API</h3>
+        <p>A RESTful API that provides movie-related information, reviews, and real-time cinema updates.</p>
+      </div>
     </div>
   </section>
 );
 
-const Projects = () => (
-  <section className="projects" data-aos="fade-left">
-    <SectionHeader title="Projects" />
-    <ul>
-      <li>Chat with PDF's</li>
-      <li>Chat with Website</li>
-      <li>Google Sheets Integration</li>
-      <li>Cinema Connect API</li>
-    </ul>
-  </section>
-);
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -112,6 +149,9 @@ const Contact = () => {
         <button type="submit">Send</button>
       </form>
       <p>{responseMessage}</p>
+      <p className="contact-details">
+        📧 sujathamummana212@gmail.com | 📞 9391833286 | 🔗 <a href="https://github.com/SujathaMummana" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </p>
     </section>
   );
 };
@@ -121,8 +161,13 @@ const App = () => {
     AOS.init({ duration: 1200 });
   }, []);
 
+  const toggleDarkMode = () => {
+    document.body.classList.toggle("dark-mode");
+  };
+
   return (
     <Router>
+      <button className="toggle-btn" onClick={toggleDarkMode}>Toggle Dark Mode</button>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
