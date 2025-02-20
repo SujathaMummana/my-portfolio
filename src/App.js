@@ -117,7 +117,7 @@ const Projects = () => (
 
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({ name: "",mobile: "", email: "", message: "" });
   const [responseMessage, setResponseMessage] = useState("");
 
   const handleChange = (e) => {
@@ -151,9 +151,25 @@ const Contact = () => {
       <p>{responseMessage}</p>
       <p className="contact-details">
         📧 sujathamummana212@gmail.com | 📞 9391833286 | 🔗 <a href="https://github.com/SujathaMummana" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </p>
+        |🔗 <a 
+  href="https://www.linkedin.com/in/sujatha-mummana-1b79302ab/" 
+  target="_blank" 
+  rel="noopener noreferrer" 
+
+>
+   LinkedIn
+</a>
+</p>
     </section>
   );
+  <a 
+  href="https://www.linkedin.com/in/sujatha-mummana-1b79302ab/" 
+  target="_blank" 
+  rel="noopener noreferrer"
+>
+  <img src="linkedin-icon.png" alt="LinkedIn" className="social-icon" />
+</a>
+
 };
 
 const App = () => {

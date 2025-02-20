@@ -319,4 +319,29 @@ body {
   .web-chat { color: #ee2e2e; }        /* Dark Blue */
   .sheets-integration { color: #ee2e2e; } /* Teal */
   .cinema-api { color: #ee2e2e; }       /* Orange */
+  .linkedin-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0077b5; /* LinkedIn Blue */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .linkedin-button:hover {
+    background-color: #005582;
+  }
+  
+  .social-icon {
+    width: 10px;
+    height: 10px;
+    margin: 10px;
+    transition: 0.3s;
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.1);
+  }
   
